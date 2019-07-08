@@ -46,4 +46,8 @@ public class UserController {
     public User getUser(@PathVariable("user-id") final long userId) {
         return userManager.getUser(userId);
     }
+    @GetMapping("/users/{user-id}/shippingAddress")
+    public List<Address> getShippingAddress(@PathVariable("user-id") final long userId) {
+        return userManager.getShippingAddresses(userId);
+    }
 }

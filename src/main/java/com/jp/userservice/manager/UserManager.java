@@ -9,6 +9,7 @@ import com.jp.userservice.util.UserServiceUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -48,5 +49,9 @@ public class UserManager {
     }
     public User getUser(final long userId) {
         return  userDao.findById(userId).orElse(new User());
+    }
+    
+    public List<Address> getShippingAddresses(final long userId) {
+        return  userDao.findById(userId).map(User::getShippingAddress).orElse(new ArrayList<Address>());
     }
 }
