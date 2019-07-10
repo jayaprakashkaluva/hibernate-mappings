@@ -1,0 +1,15 @@
+#database : oracle
+#insert
+select hibernate_sequence.nextval from dual
+select hibernate_sequence.nextval from dual
+select hibernate_sequence.nextval from dual
+insert into address (address1, address2, city, country, first_name, last_name, state, zip_code, address_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+insert into user_details (billing_address_address_id, email, first_name, last_name, password, user_id) values (?, ?, ?, ?, ?, ?)
+insert into address (address1, address2, city, country, first_name, last_name, state, zip_code, address_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+insert into user_details_shipping_address (user_user_id, shipping_address_address_id) values (?, ?)
+#select
+select user.user_id as user_id1_1_, user.billing_address_address_id as billing_address_ad6_1_, user.email as email2_1_, user.first_name as first_name3_1_, user.last_name as last_name4_1_, user.password as password5_1_ from user_details user
+select address0_.address_id as address_id1_0_0_, address0_.address1 as address2_0_0_, address0_.address2 as address3_0_0_, address0_.city as city4_0_0_, address0_.country as country5_0_0_, address0_.first_name as first_name6_0_0_, address0_.last_name as last_name7_0_0_, address0_.state as state8_0_0_, address0_.zip_code as zip_code9_0_0_ from address address0_ where address0_.address_id=?
+select address0_.address_id as address_id1_0_0_, address0_.address1 as address2_0_0_, address0_.address2 as address3_0_0_, address0_.city as city4_0_0_, address0_.country as country5_0_0_, address0_.first_name as first_name6_0_0_, address0_.last_name as last_name7_0_0_, address0_.state as state8_0_0_, address0_.zip_code as zip_code9_0_0_ from address address0_ where address0_.address_id=?
+select shippingad0_.user_user_id as user_user_id1_2_0_, shippingad0_.shipping_address_address_id as shipping_address_a2_2_0_, address1_.address_id as address_id1_0_1_, address1_.address1 as address2_0_1_, address1_.address2 as address3_0_1_, address1_.city as city4_0_1_, address1_.country as country5_0_1_, address1_.first_name as first_name6_0_1_, address1_.last_name as last_name7_0_1_, address1_.state as state8_0_1_, address1_.zip_code as zip_code9_0_1_ from user_details_shipping_address shippingad0_ inner join address address1_ on shippingad0_.shipping_address_address_id=address1_.address_id where shippingad0_.user_user_id=?
+select shippingad0_.user_user_id as user_user_id1_2_0_, shippingad0_.shipping_address_address_id as shipping_address_a2_2_0_, address1_.address_id as address_id1_0_1_, address1_.address1 as address2_0_1_, address1_.address2 as address3_0_1_, address1_.city as city4_0_1_, address1_.country as country5_0_1_, address1_.first_name as first_name6_0_1_, address1_.last_name as last_name7_0_1_, address1_.state as state8_0_1_, address1_.zip_code as zip_code9_0_1_ from user_details_shipping_address shippingad0_ inner join address address1_ on shippingad0_.shipping_address_address_id=address1_.address_id where shippingad0_.user_user_id=?

@@ -41,9 +41,19 @@ public class UserController {
     public void deleteShippingAddress(@PathVariable("user-id") final long userId,@PathVariable("address-id") final long addressId) {
         userManager.deleteShippingAddress(userId,addressId);
     }
+    
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userManager.getUsers();
+    }
 
     @GetMapping("/users/{user-id}")
     public User getUser(@PathVariable("user-id") final long userId) {
         return userManager.getUser(userId);
+    }
+    
+    @GetMapping("/users/{user-id}/shippingAddress")
+    public List<Address> getShippingAddress(@PathVariable("user-id") final long userId) {
+        return userManager.getShippingAddresses(userId);
     }
 }
