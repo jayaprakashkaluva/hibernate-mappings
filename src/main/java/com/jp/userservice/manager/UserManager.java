@@ -51,6 +51,10 @@ public class UserManager {
         return  userDao.findById(userId).orElse(new User());
     }
     
+    public List<User> getUsers() {
+        return  (List<User>) userDao.findAll();
+    }
+    
     public List<Address> getShippingAddresses(final long userId) {
         return  userDao.findById(userId).map(User::getShippingAddress).orElse(new ArrayList<Address>());
     }
